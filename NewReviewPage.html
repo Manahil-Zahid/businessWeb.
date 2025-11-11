@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamEdge</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;      
+            align-items: center;  
+            box-shadow: 3px 3px 6px black;
+        }
+
+        header h1 {
+            color: black;
+            font-size: 2rem;
+        }
+
+        header img {
+            height: 3.1rem;
+            width: auto;
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        ul li a{
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: black;
+            padding: 0.625rem 1.875rem;
+        }
+
+        ul li a:hover {
+            color: #ff4fc9;
+            cursor: pointer;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            gap: 0.6rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("Evacuee-Trust-Complex.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 90vh;
+            width: 100vw;  
+            font-family: Arial, Helvetica, sans-serif;      
+        }
+
+        .hero-content{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            
+        }
+
+        .hero-content h1 {
+            font-weight: bold;
+            font-size: 3.5rem;
+            
+            padding-top: 6.25rem;
+            line-height: 1.4;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            font-family:'Times New Roman', Times, serif;
+            padding-top: 1.25rem;
+            padding-bottom: 5rem;
+        }
+
+        .hero-content a {
+            text-decoration: none;
+        }
+
+        .hero-btn {
+            background: linear-gradient(135deg, #a800ff, #ff4fc9);
+            color: white;
+            padding: 0.625rem 1.875rem;
+            border-radius: 4px;
+            font-size: 1.4rem;        
+        }
+
+        .hero-btn:hover {
+            background: white;
+            color: #ff4fc9;
+            cursor: pointer;
+        }
+
+        .services {
+            background: rgb(238, 231, 231);
+            color: black;
+            padding: 1rem 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            line-height: 1.6;
+            padding-top: 6.25rem;
+        }
+
+        .intro h1, .intro p {
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 2.5rem;
+        }
+        
+        .cards div {
+            background-color: rgba(195, 186, 186, 0.4);
+            padding: 1rem;
+            align-items: center;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .cards div img {
+            width: 3rem;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 2.5rem;
+        }
+
+        .cards div h2 {
+            margin-bottom: 0.625rem;
+        } 
+
+        .cards div p {
+            margin-bottom: 1.25rem;
+            line-height: 1.4;
+        }
+
+        .cards div button {
+            padding: 0.5rem 0.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            background-color: white;
+            color: black;
+        }
+
+        .cards div button:hover {
+            background: linear-gradient(45deg, #a800ff, #ff4fc9);
+            color: white;
+            cursor: pointer;
+        }
+
+        .review-section {
+            color: black;
+            background: rgb(238, 231, 231);
+            font-family: Arial, Helvetica, sans-serif;      
+            padding-bottom: 2rem;         
+        }
+
+        .review-intro {
+            margin: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .review-intro h1 {
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+            margin: 2rem;
+            padding-top: 2rem;
+        }
+
+        .review-articles{
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        .review {
+            background: linear-gradient(135deg, #a800ff, #ff4fc9);
+            color: white;
+            border-radius: 20px;
+            padding: 2.5rem 1.56rem;
+            max-width: 320px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transform-style: preserve-3d;
+        }
+
+        .review:hover {
+            transform: rotateY(8deg) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 0, 255, 0.3);
+        }
+
+        .review figure img {
+            width: 5.6rem;
+            height: 5.6rem;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .review h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0.63rem 0 0.31rem;
+        }
+
+        .review p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #f5f5f5;
+        }
+
+        .review p:last-child {
+            font-size: 0.85rem;
+            color: #e0d1ff;
+            margin-top: 0.31rem;
+        }
+
+         .footer {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 0.625rem;
+            margin-top: 6.25rem;           
+        }
+
+        /* Tablet and smaller devices */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+
+            ul {
+                padding-top: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                padding-top: 4rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+                padding-bottom: 3rem;
+            }
+
+            .intro {
+                padding-top: 4rem;
+            }
+
+            .cards {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .cards div {
+                width: 80%;
+                max-width: 350px;
+            }
+
+            .review-intro h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Mobile devices */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            ul li a {
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-btn {
+                font-size: 1.2rem;
+                padding: 0.5rem 1.5rem;
+            }
+
+            .intro h1 {
+                font-size: 1.8rem;
+            }
+
+            .review-intro h1 {
+                font-size: 1.5rem;
+                margin: 1rem;
+                padding-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="BrandLogo(png image).svg" alt="BrandLogoImage">
+            <h1>DreamEdge</h1>
+        </div>
+
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Empowering Creativity <br> with DreamEdge</h1>
+            <p>We design impactful digital experiences that <br> help brands grow and stand out.</p>
+            <a href="#services" class="hero-btn">Explore Services</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="intro">
+            <h1>Our Services</h1>
+            <p>Tailored Solutions for your Success, Elevate Your Experience with Our <br> Exceptional and Customized Services Today.</p>
+        </div>
+
+        <div class="cards">
+            <div>
+                <img src="UXlogo.svg" alt="UX Logo_Image">
+                <h2>UX Design</h2>
+                <p>Crafting seamless user <br> experiences that leave <br> a lasting impression.</p>
+                <button>Learn More</button>
+            </div>
+            <div>
+                <img src="branding logo.svg" alt="Branding Logo_Image">
+                <h2>Branding</h2>
+                <p>Crafting Identity, Inspiring <br> Connections: Your's Brand <br> Unique Story.</p>
+                <button>Learn More</button>
+            </div>
+            <div>
+                <img src="3d design logo.svg" alt="3D Logo_Image">
+                <h2>3D Design</h2>
+                <p>Creating Immersive worlds <br> through intricate and <br> immersive designs.</p>
+                <button>Learn More</button>
+            </div>
+            <div>
+                <img src="Illustration_logo.svg" alt="Illustration Logo_Image">
+                <h2>Illustration</h2>
+                <p>Capturing Moments: A <br> visual journey through <br> time and emotion.</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="review-section">
+        <div class="review-intro">
+            <h1>Don't just take our words for it - Take theirs!</h1>
+        </div>
+
+        <div class="review-articles">
+            <article class="review">
+                <figure>
+                    <img src="client's photo02 (1).jpg" alt="Client's Picture">
+                </figure>
+                    <p>DreamEdge completely transformed <br> our online presence. The design <br> was elegant, modern, and exactly <br> what we envisioned!</p>
+                    <h2>Sarah Johnson</h2>
+                    <p>Project Coordinator</p>
+            </article>
+
+            <article class="review">
+                <figure>
+                    <img src="clients_photo3 (1).png" alt="Client's Picture">
+                </figure>
+                    <p>Working with DreamEdge was <br> smooth and stress-free. They <br> understood our brand instantly <br> and delivered beyond expectations.</p>
+                    <h2>Grace Miller</h2>
+                    <p>Content Strategist</p>
+            </article>
+
+            <article class="review">
+                <figure>
+                    <img src="resize-17625159301022979841clientsphoto.png" alt="Client's Picture">
+                </figure>
+                    <p>I’m amazed by their creativity and <br> attention to detail. The final design <br> gave our business a truly professional <br> edge!</p>
+                    <h2>Emily Carter</h2>
+                    <p>Business Owner</p>
+            </article>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Demo Project. All rights reserved.</p>
+    </footer>
+</body>
+</html>
